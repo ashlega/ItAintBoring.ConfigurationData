@@ -1,0 +1,313 @@
+﻿"use strict";
+var Sdk = window.Sdk || {};
+var webAPIPath = "../../../api/data/v8.2";      // Path to the web API.
+
+Sdk.request = function (action, uri, data, formattedValue, maxPageSize) {
+    if (!RegExp(action, "g").test("POST PATCH PUT GET DELETE")) { // Expected action verbs.
+        throw new Error("Sdk.request: action parameter must be one of the following: " +
+            "POST, PATCH, PUT, GET, or DELETE.");
+    }
+    if (!typeof uri === "string") {
+        throw new Error("Sdk.request: uri parameter must be a string.");
+    }
+    if ((RegExp(action, "g").test("POST PATCH PUT")) && (data === null || data === undefined)) {
+        //PublishAllXml?
+       // throw new Error("Sdk.request: data parameter must not be null for operations that create or modify data.");
+    }
+    if (maxPageSize === null || maxPageSize === undefined) {
+        maxPageSize = 1000; // Default limit is 10 entities per page.
+    }
+
+    return new Promise(function (resolve, reject) {
+        var request = new XMLHttpRequest();
+        request.open(action, encodeURI(uri), true);
+        request.setRequestHeader("OData-MaxVersion", "4.0");
+        request.setRequestHeader("OData-Version", "4.0");
+        request.setRequestHeader("Accept", "application/json");
+        request.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+        request.setRequestHeader("Prefer", "odata.maxpagesize=" + maxPageSize);
+        request.setRequestHeader("Cache-Control", "no-cache")
+        if (formattedValue) {
+            request.setRequestHeader("Prefer",
+                "odata.include-annotations=OData.Community.Display.V1.FormattedValue");
+        }
+        request.onreadystatechange = function () {
+            if (this.readyState === 4) {
+                request.onreadystatechange = null;
+                switch (this.status) {
+                    case 200: // Success with content returned in response body.
+                    case 204: // Success with no content returned in response body.
+                        resolve(this);
+                        break;
+                    default: // All other statuses are unexpected so are treated like errors.
+                        var error;
+                        try {
+                            error = JSON.parse(request.response).error;
+                        } catch (e) {
+                            error = new Error("Unexpected Error");
+                        }
+                        reject(error);
+                        break;
+                }
+            }
+        };
+        if (data == null) {
+            request.send(data);
+        }
+        else if (typeof data != "string") {
+            request.send(JSON.stringify(data));
+        }
+        else {
+            request.send(data);
+        }
+    });
+};
+
+Sdk.UserInfo = null;
+
+Sdk.WhoAmI = function (onSuccess) {
+    Sdk.request("GET", webAPIPath + "/WhoAmI", null) // Adding sample data so we can query against it.
+        .then(function (request) {
+            Sdk.UserInfo = JSON.parse(request.response);
+            onSuccess();
+        })
+        .catch(function (error) {
+            Sdk.UserInfo = {};
+            Sdk.UserInfo.OrganizationId = '123';
+            onSuccess();
+        });
+}
+
+Sdk.PublishWebResource = function (webresourceid, onSuccess, onError) {
+
+    var parameters = {};
+    parameters.ParameterXml = '<importexportxml><webresources><webresource>' + webresourceid + '</webresource></webresources></importexportxml>';
+
+    Sdk.request("POST", webAPIPath + "/PublishXml", parameters) // Adding sample data so we can query against it.
+        .then(function (request) {
+            onSuccess();
+        })
+        .catch(function (error) {
+            onError(error.message);
+        });
+}
+
+Sdk.output = function (collection, label, properties) {
+    console.log(label);
+    collection.forEach(function (row, i) {
+        var prop = [];
+        properties.forEach(function (p) {
+            var f = p + "@OData.Community.Display.V1.FormattedValue";
+            prop.push((row[f] ? row[f] : row[p])); // Get formatted value if one exists for this property.
+        })
+        console.log("\t%s) %s", i + 1, prop.join(", "));
+    });
+}
+
+Sdk.currentData = null;
+
+
+Sdk.getLoadedResourceById = function (id) {
+    var foundRow = null;
+    if (Sdk.currentData != null) {
+        Sdk.currentData.rows.forEach(function (row) {
+            if (row.webresourceid == id) {
+                foundRow = row;
+                return;
+            }
+        });
+    }
+    return foundRow;
+}
+
+Sdk.updateWebResource = function (data, onSuccess, onError) {
+    var uri = webAPIPath + "/webresourceset(" + data.webresourceid + ")";
+    var updatedResource = {};
+    updatedResource.webresourceid = data.webresourceid;
+    updatedResource.description = JSON.stringify(data);
+    var result = Sdk.request("PATCH", uri, updatedResource) // Adding sample data so we can query against it.
+        .then(function (request) {
+            Sdk.PublishWebResource(data.webresourceid, onSuccess, onError);
+            //onSuccess();
+        })
+        .catch(function (error) {
+            onError(error.message);
+        });
+}
+
+Sdk.publishAll = function (onSuccess, onError) {
+    //TODO
+    //Add publish all
+    var uri = webAPIPath + "/PublishAllXml";
+    Sdk.request("POST", uri, null) // Adding sample data so we can query against it.
+        .then(function (request) {
+            onSuccess();
+        })
+        .catch(function (error) {
+            onError(error.message);
+        });
+}
+
+Sdk.deleteWebResource = function (webResourceId, onSuccess, onError) {
+    var uri = webAPIPath + "/webresourceset(" + webResourceId + ")";
+    Sdk.request("DELETE", uri, null) // Adding sample data so we can query against it.
+        .then(function (request) {
+            onSuccess();
+            //Sdk.publishAll(onSuccess, onError);
+        })
+        .catch(function (error) {
+            onError(error.message);
+        });
+}
+
+Sdk.createWebResource = function (data, onSuccess, onError) {
+    var uri = webAPIPath + "/webresourceset";
+    var createdResource = {};
+    data.homeorganization = Sdk.UserInfo.OrganizationId;
+    data.type = "ita_configuration_data";
+
+    createdResource.description = JSON.stringify(data);
+    createdResource.webresourcetype = 4;
+    createdResource.displayname = (new Date()).getTime().toString()+".xml";
+    createdResource.name = "ita_/configurationdata/resources/" + createdResource.displayname;
+    var result = Sdk.request("POST", uri, createdResource) // Adding sample data so we can query against it.
+        .then(function (request) {
+
+            var resourceUri = request.getResponseHeader("odata-entityid");
+            var idmatch = resourceUri.match(/\(([^)]+)\)/);
+            data.webresourceid = idmatch[1];
+            
+            Sdk.PublishWebResource(data.webresourceid, onSuccess, onError);
+            
+        })
+        .catch(function (error) {
+            onError(error.message);
+        });
+}
+
+Sdk.getWebResourcesInternal = function (initializeGrid) {
+
+    var uri = webAPIPath + "/webresourceset?$select=webresourceid,modifiedon,displayname,description,name&$filter=contains(description,'ita_configuration_data')&$orderby=displayname asc";
+    var result = Sdk.request("GET", uri, null, false, 1000) // Adding sample data so we can query against it.
+        .then(function (request) {
+            var parsedRows = JSON.parse(request.response).value;
+            var gridRows = [];
+            parsedRows.forEach(function (row) {
+                var gridRow = JSON.parse(row.description);
+
+                gridRow.fetchxml = decodeURI(gridRow.fetchxml);
+                gridRow.webresourceid = row.webresourceid;
+                gridRow.resourcename = row.name;
+                gridRows.push(gridRow);
+            });
+            var response = { current: 1, rowCount: 10, rows: gridRows, total: gridRows.length };
+            Sdk.currentData = response;
+            initializeGrid(response);
+        })
+        .catch(function (error) {
+            alert(error.message);
+            console.log(error.message);
+            var response = $.parseJSON('{"current": 1,"rowCount": 10,"rows": [ {"webresourceid": 19,"displayname": "123@test.de", "modifiedon": "2014-05-30T22:15:00", "description":"test" }],"total": 1123}');
+            Sdk.currentData = response;
+            initializeGrid(response);
+        });
+}
+
+Sdk.getWebResources = function (initializeGrid) {
+
+    Sdk.WhoAmI(function () {
+        Sdk.getWebResourcesInternal(initializeGrid);
+    });
+    
+}
+
+Sdk.allResourcesSerializationData = null;
+
+Sdk.internalSerializeAllResources = function () {
+    if (Sdk.allResourcesSerializationData.currentResource >= Sdk.allResourcesSerializationData.resources.length) {
+        Sdk.allResourcesSerializationData.onSuccess();
+    }
+    else {
+        Sdk.serializeWebResource(Sdk.allResourcesSerializationData.resources[Sdk.allResourcesSerializationData.currentResource].webresourceid, null, Sdk.internalSerializeAllResources, Sdk.allResourcesSerializationData.onError);
+        Sdk.allResourcesSerializationData.currentResource++;
+    }
+}
+
+Sdk.internalDeSerializeAllResources = function () {
+    if (Sdk.allResourcesSerializationData.currentResource >= Sdk.allResourcesSerializationData.resources.length) {
+        Sdk.allResourcesSerializationData.onSuccess();
+    }
+    else {
+        Sdk.deSerializeWebResource(Sdk.allResourcesSerializationData.resources[Sdk.allResourcesSerializationData.currentResource].webresourceid, null, Sdk.internalDeSerializeAllResources, Sdk.allResourcesSerializationData.onError);
+        Sdk.allResourcesSerializationData.currentResource++;
+    }
+}
+
+Sdk.serializeAllResources = function (onSuccess, onError) {
+    //Sdk.currentData = { current: 1, rowCount: 10, rows: gridRows, total: gridRows.length };
+    Sdk.allResourcesSerializationData = {};
+    Sdk.allResourcesSerializationData.onSuccess = onSuccess;
+    Sdk.allResourcesSerializationData.onError = onError;
+    Sdk.allResourcesSerializationData.resources = [];
+    Sdk.currentData.rows.forEach(function (row) {
+        if (row.homeorganization == Sdk.UserInfo.OrganizationId) {
+            Sdk.allResourcesSerializationData.resources.push(row);
+        }
+    });
+    
+    Sdk.allResourcesSerializationData.resources.sort(function (a, b) { return a.order > b.order });
+    Sdk.allResourcesSerializationData.currentResource = 0;
+    Sdk.internalSerializeAllResources();
+ }
+
+Sdk.deSerializeAllResources = function (onSuccess, onError) {
+    Sdk.allResourcesSerializationData = {};
+    Sdk.allResourcesSerializationData.onSuccess = onSuccess;
+    Sdk.allResourcesSerializationData.onError = onError;
+    Sdk.allResourcesSerializationData.resources = [];
+    Sdk.currentData.rows.forEach(function (row) {
+        //if (row.homeorganization != Sdk.UserInfo.OrganizationId)
+        {
+            Sdk.allResourcesSerializationData.resources.push(row);
+        }
+    });
+    Sdk.allResourcesSerializationData.currentResource = 0;
+    Sdk.internalDeSerializeAllResources();
+}
+
+Sdk.serializeWebResource = function(resourceId, settings, onSuccess, onError) {
+
+    var parameters = {};
+    var webresource = {};
+    webresource.webresourceid = resourceId;//"00000001-0000-0000-0000-000000000000";
+    parameters.WebResource = webresource;
+    parameters.Settings = "test";
+
+    var uri = webAPIPath + "/ita_serializeconfigurationdata";
+    var result = Sdk.request("POST", uri, parameters, false, 1000) // Adding sample data so we can query against it.
+        .then(function (request) {
+            onSuccess();
+        })
+        .catch(function (error) {
+            onError(error.message);
+        });
+}
+
+Sdk.deSerializeWebResource = function (resourceId, settings, onSuccess, onError) {
+
+
+    var parameters = {};
+    var webresource = {};
+    webresource.webresourceid = resourceId;//"00000001-0000-0000-0000-000000000000";
+    parameters.WebResource = webresource;
+
+    var uri = webAPIPath + "/ita_deserializeconfigurationdata";
+    var result = Sdk.request("POST", uri, parameters, false, 1000) // Adding sample data so we can query against it.
+        .then(function (request) {
+            onSuccess();
+        })
+        .catch(function (error) {
+            onError(error.message);
+        });
+}
+

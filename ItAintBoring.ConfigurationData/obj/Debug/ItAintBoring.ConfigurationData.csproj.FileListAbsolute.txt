@@ -1,0 +1,11 @@
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\bin\Debug\ItAintBoring.ConfigurationData.dll
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\bin\Debug\ItAintBoring.ConfigurationData.pdb
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\bin\Debug\Microsoft.Crm.Sdk.Proxy.dll
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\bin\Debug\Microsoft.IdentityModel.dll
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\bin\Debug\Microsoft.Xrm.Sdk.dll
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\bin\Debug\Microsoft.Crm.Sdk.Proxy.xml
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\bin\Debug\Microsoft.Xrm.Sdk.xml
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\obj\Debug\ItAintBoring.ConfigurationData.csproj.CoreCompileInputs.cache
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\obj\Debug\ItAintBoring.ConfigurationData.dll
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\obj\Debug\ItAintBoring.ConfigurationData.pdb
+C:\Work\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\obj\Debug\ItAintBoring.ConfigurationData.csprojResolveAssemblyReference.cache

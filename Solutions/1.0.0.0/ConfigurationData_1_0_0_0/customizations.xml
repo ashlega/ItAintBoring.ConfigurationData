@@ -1,0 +1,1542 @@
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Entities>
+    <Entity>
+      <Name LocalizedName="Configuration Data Query" OriginalName="Configuration Data Query">ita_configurationdataquery</Name>
+      <ObjectTypeCode>10017</ObjectTypeCode>
+      <EntityInfo>
+        <entity Name="ita_configurationdataquery">
+          <LocalizedNames>
+            <LocalizedName description="Configuration Data Query" languagecode="1033" />
+          </LocalizedNames>
+          <LocalizedCollectionNames>
+            <LocalizedCollectionName description="Configuration Data Queries" languagecode="1033" />
+          </LocalizedCollectionNames>
+          <Descriptions>
+            <Description description="" languagecode="1033" />
+          </Descriptions>
+          <attributes>
+            <attribute PhysicalName="CreatedBy">
+              <Type>lookup</Type>
+              <Name>createdby</Name>
+              <LogicalName>createdby</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <LookupStyle>single</LookupStyle>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Created By" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="CreatedOn">
+              <Type>datetime</Type>
+              <Name>createdon</Name>
+              <LogicalName>createdon</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>inactive</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <Format>datetime</Format>
+              <CanChangeDateTimeBehavior>0</CanChangeDateTimeBehavior>
+              <Behavior>1</Behavior>
+              <displaynames>
+                <displayname description="Created On" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Date and time when the record was created." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="CreatedOnBehalfBy">
+              <Type>lookup</Type>
+              <Name>createdonbehalfby</Name>
+              <LogicalName>createdonbehalfby</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <LookupStyle>single</LookupStyle>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Created By (Delegate)" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier of the delegate user who created the record." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ImportSequenceNumber">
+              <Type>int</Type>
+              <Name>importsequencenumber</Name>
+              <LogicalName>importsequencenumber</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind</DisplayMask>
+              <ImeMode>disabled</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <Format></Format>
+              <MinValue>-2147483648</MinValue>
+              <MaxValue>2147483647</MaxValue>
+              <displaynames>
+                <displayname description="Import Sequence Number" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Sequence number of the import that created this record." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ita_configurationdataqueryId">
+              <Type>primarykey</Type>
+              <Name>ita_configurationdataqueryid</Name>
+              <LogicalName>ita_configurationdataqueryid</LogicalName>
+              <RequiredLevel>systemrequired</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|RequiredForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>0</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <displaynames>
+                <displayname description="Configuration Data Query" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier for entity instances" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ita_fetchxml">
+              <Type>ntext</Type>
+              <Name>ita_fetchxml</Name>
+              <LogicalName>ita_fetchxml</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <Format></Format>
+              <MaxLength>10000</MaxLength>
+              <displaynames>
+                <displayname description="Fetch XML" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ita_name">
+              <Type>nvarchar</Type>
+              <Name>ita_name</Name>
+              <LogicalName>ita_name</LogicalName>
+              <RequiredLevel>required</RequiredLevel>
+              <DisplayMask>PrimaryName|ValidForAdvancedFind|ValidForForm|ValidForGrid|RequiredForForm</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>1</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <Format>text</Format>
+              <MaxLength>100</MaxLength>
+              <Length>200</Length>
+              <displaynames>
+                <displayname description="Name" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="The name of the custom entity." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ModifiedBy">
+              <Type>lookup</Type>
+              <Name>modifiedby</Name>
+              <LogicalName>modifiedby</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <LookupStyle>single</LookupStyle>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Modified By" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ModifiedOn">
+              <Type>datetime</Type>
+              <Name>modifiedon</Name>
+              <LogicalName>modifiedon</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>inactive</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <Format>datetime</Format>
+              <CanChangeDateTimeBehavior>0</CanChangeDateTimeBehavior>
+              <Behavior>1</Behavior>
+              <displaynames>
+                <displayname description="Modified On" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Date and time when the record was modified." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="ModifiedOnBehalfBy">
+              <Type>lookup</Type>
+              <Name>modifiedonbehalfby</Name>
+              <LogicalName>modifiedonbehalfby</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <LookupStyle>single</LookupStyle>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Modified By (Delegate)" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier of the delegate user who modified the record." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="OrganizationId">
+              <Type>lookup</Type>
+              <Name>organizationid</Name>
+              <LogicalName>organizationid</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <ImeMode>auto</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <LookupTypes />
+              <displaynames>
+                <displayname description="Organization Id" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Unique identifier for the organization" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="OverriddenCreatedOn">
+              <Type>datetime</Type>
+              <Name>overriddencreatedon</Name>
+              <LogicalName>overriddencreatedon</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForGrid</DisplayMask>
+              <ImeMode>inactive</ImeMode>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <Format>date</Format>
+              <CanChangeDateTimeBehavior>0</CanChangeDateTimeBehavior>
+              <Behavior>1</Behavior>
+              <displaynames>
+                <displayname description="Record Created On" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Date and time that the record was migrated." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="statecode">
+              <Type>state</Type>
+              <Name>statecode</Name>
+              <LogicalName>statecode</LogicalName>
+              <RequiredLevel>systemrequired</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <optionset Name="ita_configurationdataquery_statecode">
+                <OptionSetType>state</OptionSetType>
+                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IsCustomizable>1</IsCustomizable>
+                <displaynames>
+                  <displayname description="Status" languagecode="1033" />
+                </displaynames>
+                <Descriptions>
+                  <Description description="Status of the Configuration Data Query" languagecode="1033" />
+                </Descriptions>
+                <states>
+                  <state value="0" defaultstatus="1" invariantname="Active">
+                    <labels>
+                      <label description="Active" languagecode="1033" />
+                    </labels>
+                  </state>
+                  <state value="1" defaultstatus="2" invariantname="Inactive">
+                    <labels>
+                      <label description="Inactive" languagecode="1033" />
+                    </labels>
+                  </state>
+                </states>
+              </optionset>
+              <displaynames>
+                <displayname description="Status" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Status of the Configuration Data Query" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="statuscode">
+              <Type>status</Type>
+              <Name>statuscode</Name>
+              <LogicalName>statuscode</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <DisplayMask>ValidForAdvancedFind|ValidForForm|ValidForGrid</DisplayMask>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>1</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <optionset Name="ita_configurationdataquery_statuscode">
+                <OptionSetType>status</OptionSetType>
+                <IntroducedVersion>1.0.0.0</IntroducedVersion>
+                <IsCustomizable>1</IsCustomizable>
+                <displaynames>
+                  <displayname description="Status Reason" languagecode="1033" />
+                </displaynames>
+                <Descriptions>
+                  <Description description="Reason for the status of the Configuration Data Query" languagecode="1033" />
+                </Descriptions>
+                <statuses>
+                  <status value="1" state="0">
+                    <labels>
+                      <label description="Active" languagecode="1033" />
+                    </labels>
+                  </status>
+                  <status value="2" state="1">
+                    <labels>
+                      <label description="Inactive" languagecode="1033" />
+                    </labels>
+                  </status>
+                </statuses>
+              </optionset>
+              <displaynames>
+                <displayname description="Status Reason" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Reason for the status of the Configuration Data Query" languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="TimeZoneRuleVersionNumber">
+              <Type>int</Type>
+              <Name>timezoneruleversionnumber</Name>
+              <LogicalName>timezoneruleversionnumber</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <Format></Format>
+              <MinValue>-1</MinValue>
+              <MaxValue>2147483647</MaxValue>
+              <displaynames>
+                <displayname description="Time Zone Rule Version Number" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="For internal use only." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+            <attribute PhysicalName="UTCConversionTimeZoneCode">
+              <Type>int</Type>
+              <Name>utcconversiontimezonecode</Name>
+              <LogicalName>utcconversiontimezonecode</LogicalName>
+              <RequiredLevel>none</RequiredLevel>
+              <ImeMode>auto</ImeMode>
+              <ValidForUpdateApi>1</ValidForUpdateApi>
+              <ValidForReadApi>1</ValidForReadApi>
+              <ValidForCreateApi>1</ValidForCreateApi>
+              <IsCustomField>0</IsCustomField>
+              <IsAuditEnabled>0</IsAuditEnabled>
+              <IsSecured>0</IsSecured>
+              <IntroducedVersion>1.0.0.0</IntroducedVersion>
+              <IsCustomizable>1</IsCustomizable>
+              <IsRenameable>1</IsRenameable>
+              <CanModifySearchSettings>1</CanModifySearchSettings>
+              <CanModifyRequirementLevelSettings>1</CanModifyRequirementLevelSettings>
+              <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+              <SourceType>0</SourceType>
+              <IsGlobalFilterEnabled>0</IsGlobalFilterEnabled>
+              <IsSortableEnabled>0</IsSortableEnabled>
+              <CanModifyGlobalFilterSettings>1</CanModifyGlobalFilterSettings>
+              <CanModifyIsSortableSettings>1</CanModifyIsSortableSettings>
+              <Format></Format>
+              <MinValue>-1</MinValue>
+              <MaxValue>2147483647</MaxValue>
+              <displaynames>
+                <displayname description="UTC Conversion Time Zone Code" languagecode="1033" />
+              </displaynames>
+              <Descriptions>
+                <Description description="Time zone code that was in use when the record was created." languagecode="1033" />
+              </Descriptions>
+            </attribute>
+          </attributes>
+          <EntitySetName>ita_configurationdataqueries</EntitySetName>
+          <IsDuplicateCheckSupported>0</IsDuplicateCheckSupported>
+          <IsBusinessProcessEnabled>0</IsBusinessProcessEnabled>
+          <IsRequiredOffline>0</IsRequiredOffline>
+          <IsInteractionCentricEnabled>0</IsInteractionCentricEnabled>
+          <IsCollaboration>0</IsCollaboration>
+          <AutoRouteToOwnerQueue>0</AutoRouteToOwnerQueue>
+          <IsConnectionsEnabled>0</IsConnectionsEnabled>
+          <EntityColor></EntityColor>
+          <IsDocumentManagementEnabled>0</IsDocumentManagementEnabled>
+          <IsOneNoteIntegrationEnabled>0</IsOneNoteIntegrationEnabled>
+          <IsKnowledgeManagementEnabled>0</IsKnowledgeManagementEnabled>
+          <IsSLAEnabled>0</IsSLAEnabled>
+          <IsDocumentRecommendationsEnabled>0</IsDocumentRecommendationsEnabled>
+          <IsBPFEntity>0</IsBPFEntity>
+          <OwnershipTypeMask>OrgOwned</OwnershipTypeMask>
+          <IsAuditEnabled>0</IsAuditEnabled>
+          <IsActivity>0</IsActivity>
+          <ActivityTypeMask></ActivityTypeMask>
+          <IsActivityParty>0</IsActivityParty>
+          <IsReplicated>0</IsReplicated>
+          <IsReplicationUserFiltered>0</IsReplicationUserFiltered>
+          <IsMailMergeEnabled>0</IsMailMergeEnabled>
+          <IsVisibleInMobile>0</IsVisibleInMobile>
+          <IsVisibleInMobileClient>0</IsVisibleInMobileClient>
+          <IsReadOnlyInMobileClient>0</IsReadOnlyInMobileClient>
+          <IsOfflineInMobileClient>0</IsOfflineInMobileClient>
+          <DaysSinceRecordLastModified>0</DaysSinceRecordLastModified>
+          <MobileOfflineFilters></MobileOfflineFilters>
+          <IsMapiGridEnabled>1</IsMapiGridEnabled>
+          <IsReadingPaneEnabled>0</IsReadingPaneEnabled>
+          <IsQuickCreateEnabled>0</IsQuickCreateEnabled>
+          <SyncToExternalSearchIndex>0</SyncToExternalSearchIndex>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+          <IsCustomizable>1</IsCustomizable>
+          <IsRenameable>1</IsRenameable>
+          <IsMappable>1</IsMappable>
+          <CanModifyAuditSettings>1</CanModifyAuditSettings>
+          <CanModifyMobileVisibility>1</CanModifyMobileVisibility>
+          <CanModifyMobileClientVisibility>1</CanModifyMobileClientVisibility>
+          <CanModifyMobileClientReadOnly>1</CanModifyMobileClientReadOnly>
+          <CanModifyMobileClientOffline>1</CanModifyMobileClientOffline>
+          <CanModifyConnectionSettings>1</CanModifyConnectionSettings>
+          <CanModifyDuplicateDetectionSettings>1</CanModifyDuplicateDetectionSettings>
+          <CanModifyMailMergeSettings>1</CanModifyMailMergeSettings>
+          <CanModifyQueueSettings>1</CanModifyQueueSettings>
+          <CanCreateAttributes>1</CanCreateAttributes>
+          <CanCreateForms>1</CanCreateForms>
+          <CanCreateCharts>1</CanCreateCharts>
+          <CanCreateViews>1</CanCreateViews>
+          <CanModifyAdditionalSettings>1</CanModifyAdditionalSettings>
+          <CanEnableSyncToExternalSearchIndex>1</CanEnableSyncToExternalSearchIndex>
+          <EnforceStateTransitions>0</EnforceStateTransitions>
+          <CanChangeHierarchicalRelationship>1</CanChangeHierarchicalRelationship>
+          <EntityHelpUrlEnabled>0</EntityHelpUrlEnabled>
+          <ChangeTrackingEnabled>0</ChangeTrackingEnabled>
+          <CanChangeTrackingBeEnabled>1</CanChangeTrackingBeEnabled>
+          <IsEnabledForExternalChannels>0</IsEnabledForExternalChannels>
+        </entity>
+      </EntityInfo>
+      <FormXml>
+        <forms type="card">
+          <systemform>
+            <formid>{89bec9de-9c6f-4795-bab3-66eff4821313}</formid>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <FormPresentation>1</FormPresentation>
+            <FormActivationState>1</FormActivationState>
+            <form>
+              <tabs>
+                <tab name="general" verticallayout="true" id="{e0be5f0a-80e8-4102-8ca8-ee2d75c32c79}" IsUserDefined="0">
+                  <labels>
+                    <label description="" languagecode="1033" />
+                  </labels>
+                  <columns>
+                    <column width="25%">
+                      <sections>
+                        <section name="ColorStrip" showlabel="false" showbar="false" columns="1" IsUserDefined="0" id="{966c0992-a58a-481d-bf31-ff0056ba173e}">
+                          <labels>
+                            <label description="ColorStrip" languagecode="1033" />
+                          </labels>
+                        </section>
+                      </sections>
+                    </column>
+                    <column width="75%">
+                      <sections>
+                        <section name="CardHeader" showlabel="false" showbar="false" columns="111" id="{c1bf29dd-b5ef-4e3a-bb76-76265db44876}" IsUserDefined="0">
+                          <labels>
+                            <label description="Header" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{d25ae53a-b92a-454e-adfe-1f61c22c7357}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Status Reason" languagecode="1033" />
+                                </labels>
+                                <control id="statuscode" classid="{5D68B988-0661-4db2-BC3E-17598AD3BE6C}" datafieldname="statuscode" disabled="false" />
+                              </cell>
+                              <cell id="{3d147ec5-0b54-4266-ab02-72e16d9928f5}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="" languagecode="1033" />
+                                </labels>
+                              </cell>
+                              <cell id="{fec3d50a-86bf-4c83-807a-4a4cdb22e784}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="" languagecode="1033" />
+                                </labels>
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                        <section name="CardDetails" showlabel="false" showbar="false" columns="1" id="{167f3c9f-159d-42ed-9bf8-7c71d1a83073}" IsUserDefined="0">
+                          <labels>
+                            <label description="Details" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{a9c68b2e-b723-4d0f-89e7-1127a503567f}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Name" languagecode="1033" />
+                                </labels>
+                                <control id="ita_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ita_name" disabled="false" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                        <section name="CardFooter" showlabel="false" columns="1111" showbar="false" id="{0dfce3f2-4a8f-4d81-9d3e-b2c9c91b7983}" IsUserDefined="0">
+                          <labels>
+                            <label description="Footer" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{270f5524-6040-40fe-993c-db9f6fe33012}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="" languagecode="1033" />
+                                </labels>
+                                <control id="ownerid" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="ownerid" disabled="false" />
+                              </cell>
+                              <cell id="{760a9dab-9b26-44e8-9d7a-bc5eac29af5a}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="Created On" languagecode="1033" />
+                                </labels>
+                                <control id="createdon" classid="{270BD3DB-D9AF-4782-9025-509E298DEC0A}" datafieldname="createdon" disabled="false" />
+                              </cell>
+                              <cell id="{67039f82-26d5-47ff-bbcd-988ba4716804}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="" languagecode="1033" />
+                                </labels>
+                              </cell>
+                              <cell id="{5fbeaad4-0d25-4b9c-9d00-51be7903fce4}" showlabel="true" locklevel="0">
+                                <labels>
+                                  <label description="" languagecode="1033" />
+                                </labels>
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                  </columns>
+                </tab>
+              </tabs>
+            </form>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>1</CanBeDeleted>
+            <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1033" />
+            </LocalizedNames>
+            <Descriptions>
+              <Description description="A card form for this entity." languagecode="1033" />
+            </Descriptions>
+          </systemform>
+        </forms>
+        <forms type="main">
+          <systemform>
+            <formid>{7b0c0eb2-9f79-4d3c-9bab-4d457f9f39dc}</formid>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <FormPresentation>1</FormPresentation>
+            <FormActivationState>1</FormActivationState>
+            <form>
+              <tabs>
+                <tab verticallayout="true" id="{44bf5398-50e7-4a63-9ee0-0f897b126c7b}" IsUserDefined="1">
+                  <labels>
+                    <label description="General" languagecode="1033" />
+                  </labels>
+                  <columns>
+                    <column width="100%">
+                      <sections>
+                        <section showlabel="false" showbar="false" IsUserDefined="0" id="{8f157eb0-2638-44d4-8986-759a84b1d42e}">
+                          <labels>
+                            <label description="General" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{c1f984bd-4286-49ec-b890-6935d453f2a3}">
+                                <labels>
+                                  <label description="Name" languagecode="1033" />
+                                </labels>
+                                <control id="ita_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ita_name" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                        <section name="{44bf5398-50e7-4a63-9ee0-0f897b126c7b}_section_2" showlabel="true" showbar="true" locklevel="0" id="{8ce559a8-ce13-c552-2601-0521aac34bdb}" IsUserDefined="0" layout="varwidth" columns="1" labelwidth="115" celllabelalignment="Left" celllabelposition="Left">
+                          <labels>
+                            <label description="Fetch" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{6e2139d3-d116-eade-32e0-b6a95396cea1}" showlabel="false" locklevel="0" rowspan="10">
+                                <labels>
+                                  <label description="Fetch XML" languagecode="1033" />
+                                </labels>
+                                <control id="ita_fetchxml" classid="{E0DECE4B-6FC8-4a8f-A065-082708572369}" datafieldname="ita_fetchxml" disabled="false" uniqueid="{944a7c42-0e8b-a041-3b7c-6e0eedb685a7}" />
+                              </cell>
+                            </row>
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                  </columns>
+                </tab>
+              </tabs>
+              <Navigation>
+                <NavBar></NavBar>
+                <NavBarAreas>
+                  <NavBarArea Id="Info">
+                    <Titles>
+                      <Title LCID="1033" Text="Common" />
+                    </Titles>
+                  </NavBarArea>
+                  <NavBarArea Id="Sales">
+                    <Titles>
+                      <Title LCID="1033" Text="Sales" />
+                    </Titles>
+                  </NavBarArea>
+                  <NavBarArea Id="Service">
+                    <Titles>
+                      <Title LCID="1033" Text="Service" />
+                    </Titles>
+                  </NavBarArea>
+                  <NavBarArea Id="Marketing">
+                    <Titles>
+                      <Title LCID="1033" Text="Marketing" />
+                    </Titles>
+                  </NavBarArea>
+                  <NavBarArea Id="ProcessCenter">
+                    <Titles>
+                      <Title LCID="1033" Text="Process Sessions" />
+                    </Titles>
+                  </NavBarArea>
+                </NavBarAreas>
+              </Navigation>
+              <controlDescriptions />
+            </form>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>1</CanBeDeleted>
+            <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1033" />
+            </LocalizedNames>
+            <Descriptions>
+              <Description description="A form for this entity." languagecode="1033" />
+            </Descriptions>
+          </systemform>
+        </forms>
+        <forms type="mainInteractionCentric">
+          <systemform>
+            <formid>{206b392d-c2a3-4915-b869-23a4fcdf8e25}</formid>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <FormPresentation>1</FormPresentation>
+            <FormActivationState>1</FormActivationState>
+            <form>
+              <tabs>
+                <tab verticallayout="true" id="{fdfaee12-4cf0-4040-9567-8d965425f6ab}" IsUserDefined="1">
+                  <labels>
+                    <label description="General Info" languagecode="1033" />
+                  </labels>
+                  <columns>
+                    <column width="24%">
+                      <sections>
+                        <section showlabel="false" showbar="false" IsUserDefined="0" id="{f2aa2be2-2371-4e93-82b2-3164e1a0232a}">
+                          <labels>
+                            <label description="General" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{6883955b-b0ac-451a-9409-c196caa518a4}">
+                                <labels>
+                                  <label description="Name" languagecode="1033" />
+                                </labels>
+                                <control id="ita_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ita_name" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                    <column width="38%">
+                      <sections>
+                        <section showlabel="true" showbar="false" id="{bf9a84ee-1bc7-46b0-8e2a-7eb8134eda9a}" IsUserDefined="0" height="auto">
+                          <labels>
+                            <label description="TIMELINE" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell showlabel="false" colspan="1" rowspan="18" auto="false" id="{82bc42ee-9411-4c4f-a3bd-faf26607d459}">
+                                <labels>
+                                  <label description="Conversation Tabs" languagecode="1033" />
+                                </labels>
+                                <control id="interactionwallcontrol" classid="{1F179106-FA28-4495-961E-F6BD93C21974}" />
+                              </cell>
+                            </row>
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row />
+                            <row height="auto" />
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                    <column width="38%">
+                      <sections>
+                        <section showlabel="true" columns="1" showbar="false" id="{62a2f04e-7a32-48fe-b8f0-ce467fc088cf}" name="ref_pan_{62a2f04e-7a32-48fe-b8f0-ce467fc088cf}" IsUserDefined="0">
+                          <labels>
+                            <label description="RELATED" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row />
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                  </columns>
+                </tab>
+              </tabs>
+              <header id="{abaad913-469f-421f-adce-dc4ceadaeb1f}" celllabelposition="Left" columns="1111">
+                <rows>
+                  <row />
+                </rows>
+              </header>
+            </form>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>1</CanBeDeleted>
+            <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1033" />
+            </LocalizedNames>
+            <Descriptions>
+              <Description description="A form for this entity." languagecode="1033" />
+            </Descriptions>
+          </systemform>
+        </forms>
+        <forms type="mobile">
+          <systemform>
+            <formid>{465681ff-4fb1-44f9-bf75-711c22d05628}</formid>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <FormPresentation>0</FormPresentation>
+            <FormActivationState>1</FormActivationState>
+            <form>
+              <tabs>
+                <tab name="general" verticallayout="true" id="{4208ba79-b31e-42a6-bdde-48ae8ab9e954}" IsUserDefined="0">
+                  <labels>
+                    <label description="" languagecode="1033" />
+                  </labels>
+                  <columns>
+                    <column width="100%">
+                      <sections>
+                        <section name="account information" showlabel="false" showbar="false" id="{57fd7cda-24ac-41ad-a8ca-d05a17c07518}" IsUserDefined="0">
+                          <labels>
+                            <label description="" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{842f9621-894a-4f25-a470-b77866a4d6af}">
+                                <labels>
+                                  <label description="Name" languagecode="1033" />
+                                </labels>
+                                <control id="ita_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ita_name" disabled="false" />
+                              </cell>
+                              <cell id="{15cf225a-e8bc-4359-954f-7603be769254}">
+                                <labels>
+                                  <label description="Status" languagecode="1033" />
+                                </labels>
+                                <control id="statecode" classid="{3EF39988-22BB-4f0b-BBBE-64B5A3748AEE}" datafieldname="statecode" disabled="false" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                  </columns>
+                </tab>
+              </tabs>
+            </form>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>1</CanBeDeleted>
+            <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1033" />
+            </LocalizedNames>
+            <Descriptions>
+              <Description description="This is the form that is displayed for the CRM for phones express application." languagecode="1033" />
+            </Descriptions>
+          </systemform>
+        </forms>
+        <forms type="quick">
+          <systemform>
+            <formid>{de5d034c-bd6c-4873-809f-d8db60b4b084}</formid>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <FormPresentation>1</FormPresentation>
+            <FormActivationState>1</FormActivationState>
+            <form>
+              <tabs>
+                <tab verticallayout="true" id="{11d2b23c-807b-4d71-92e6-d10498b8af35}" IsUserDefined="1">
+                  <labels>
+                    <label description="" languagecode="1033" />
+                  </labels>
+                  <columns>
+                    <column width="100%">
+                      <sections>
+                        <section showlabel="false" showbar="false" IsUserDefined="0" id="{7b5f600e-93ef-4358-9d14-67f6330bfb01}">
+                          <labels>
+                            <label description="GENERAL" languagecode="1033" />
+                          </labels>
+                          <rows>
+                            <row>
+                              <cell id="{36cfd468-67e7-49a3-864c-13b9ab8bb143}">
+                                <labels>
+                                  <label description="Name" languagecode="1033" />
+                                </labels>
+                                <control id="ita_name" classid="{4273EDBD-AC1D-40d3-9FB2-095C621B552D}" datafieldname="ita_name" />
+                              </cell>
+                            </row>
+                          </rows>
+                        </section>
+                      </sections>
+                    </column>
+                  </columns>
+                </tab>
+              </tabs>
+            </form>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>1</CanBeDeleted>
+            <LocalizedNames>
+              <LocalizedName description="Information" languagecode="1033" />
+            </LocalizedNames>
+          </systemform>
+        </forms>
+      </FormXml>
+      <SavedQueries>
+        <savedqueries>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10017</returnedtypecode>
+            <savedqueryid>{94d15e50-d586-4899-b3fb-4132eb99f900}</savedqueryid>
+            <layoutxml>
+              <grid name="resultset" object="10017" jump="ita_name" select="1" icon="1" preview="1">
+                <row name="result" id="ita_configurationdataqueryid">
+                  <cell name="ita_name" width="300" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>0</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="ita_configurationdataquery">
+                  <attribute name="ita_configurationdataqueryid" />
+                  <attribute name="ita_name" />
+                  <attribute name="createdon" />
+                  <order attribute="ita_name" descending="false" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="0" />
+                  </filter>
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Active Configuration Data Queries" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>1</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10017</returnedtypecode>
+            <savedqueryid>{e1b05c8f-3117-e811-9401-00155d00c101}</savedqueryid>
+            <querytype>8192</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical" output-format="xml-platform">
+                <entity name="ita_configurationdataquery">
+                  <attribute name="ita_configurationdataqueryid" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="0" />
+                  </filter>
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Configuration Data Queries" languagecode="1033" />
+            </LocalizedNames>
+            <Descriptions>
+              <Description description="All active Configuration Data Queries" languagecode="1033" />
+            </Descriptions>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10017</returnedtypecode>
+            <savedqueryid>{15facc15-5d69-4a2c-8c6d-53feab430d5b}</savedqueryid>
+            <layoutxml>
+              <grid name="resultset" object="10017" jump="ita_name" select="1" icon="1" preview="1">
+                <row name="result" id="ita_configurationdataqueryid">
+                  <cell name="ita_name" width="300" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>1</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="ita_configurationdataquery">
+                  <attribute name="ita_configurationdataqueryid" />
+                  <attribute name="ita_name" />
+                  <attribute name="createdon" />
+                  <order attribute="ita_name" descending="false" />
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Configuration Data Query Advanced Find View" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10017</returnedtypecode>
+            <savedqueryid>{de21766c-e33f-45dd-a460-4de9c0131f1e}</savedqueryid>
+            <layoutxml>
+              <grid name="" object="10017" jump="ita_name" select="1" icon="1" preview="1">
+                <row name="ita_configurationdataquery" id="ita_configurationdataqueryid">
+                  <cell name="ita_name" width="300" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>2</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="ita_configurationdataquery">
+                  <attribute name="ita_configurationdataqueryid" />
+                  <attribute name="ita_name" />
+                  <attribute name="createdon" />
+                  <order attribute="ita_name" descending="false" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="0" />
+                  </filter>
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Configuration Data Query Associated View" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10017</returnedtypecode>
+            <savedqueryid>{9860e26c-4cd5-4c91-a9bd-7acd2364ceb4}</savedqueryid>
+            <layoutxml>
+              <grid name="" object="10017" jump="ita_name" select="1" icon="1" preview="0">
+                <row name="ita_configurationdataquery" id="ita_configurationdataqueryid">
+                  <cell name="ita_name" width="300" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>64</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="ita_configurationdataquery">
+                  <attribute name="ita_configurationdataqueryid" />
+                  <attribute name="ita_name" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="0" />
+                  </filter>
+                  <order attribute="ita_name" descending="false" />
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Configuration Data Query Lookup View" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>0</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>0</isdefault>
+            <returnedtypecode>10017</returnedtypecode>
+            <savedqueryid>{18f2351d-68a1-48a3-8549-994f2e575bb2}</savedqueryid>
+            <layoutxml>
+              <grid name="resultset" object="10017" jump="ita_name" select="1" icon="1" preview="1">
+                <row name="result" id="ita_configurationdataqueryid">
+                  <cell name="ita_name" width="300" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>0</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="ita_configurationdataquery">
+                  <attribute name="ita_configurationdataqueryid" />
+                  <attribute name="ita_name" />
+                  <attribute name="createdon" />
+                  <order attribute="ita_name" descending="false" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="1" />
+                  </filter>
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Inactive Configuration Data Queries" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+          <savedquery>
+            <IsCustomizable>1</IsCustomizable>
+            <CanBeDeleted>0</CanBeDeleted>
+            <isquickfindquery>1</isquickfindquery>
+            <isprivate>0</isprivate>
+            <isdefault>1</isdefault>
+            <returnedtypecode>10017</returnedtypecode>
+            <savedqueryid>{945a53a1-50f6-4e0c-a7c6-04fe7ac59892}</savedqueryid>
+            <layoutxml>
+              <grid name="resultset" object="10017" jump="ita_name" select="1" icon="1" preview="1">
+                <row name="result" id="ita_configurationdataqueryid">
+                  <cell name="ita_name" width="300" />
+                  <cell name="createdon" width="125" />
+                </row>
+              </grid>
+            </layoutxml>
+            <querytype>4</querytype>
+            <fetchxml>
+              <fetch version="1.0" mapping="logical">
+                <entity name="ita_configurationdataquery">
+                  <attribute name="ita_configurationdataqueryid" />
+                  <attribute name="ita_name" />
+                  <attribute name="createdon" />
+                  <order attribute="ita_name" descending="false" />
+                  <filter type="and">
+                    <condition attribute="statecode" operator="eq" value="0" />
+                  </filter>
+                  <filter type="or" isquickfindfields="1">
+                    <condition attribute="ita_name" operator="like" value="{0}" />
+                  </filter>
+                </entity>
+              </fetch>
+            </fetchxml>
+            <IntroducedVersion>1.0.0.0</IntroducedVersion>
+            <LocalizedNames>
+              <LocalizedName description="Quick Find Active Configuration Data Queries" languagecode="1033" />
+            </LocalizedNames>
+          </savedquery>
+        </savedqueries>
+      </SavedQueries>
+      <RibbonDiffXml>
+        <CustomActions />
+        <Templates>
+          <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+        </Templates>
+        <CommandDefinitions />
+        <RuleDefinitions>
+          <TabDisplayRules />
+          <DisplayRules />
+          <EnableRules />
+        </RuleDefinitions>
+        <LocLabels />
+      </RibbonDiffXml>
+      <CustomControlDefaultConfigs>
+        <CustomControlDefaultConfig>
+          <PrimaryEntityTypeCode>10017</PrimaryEntityTypeCode>
+          <CustomControlDefaultConfigId>{7ab05c8f-3117-e811-9401-00155d00c101}</CustomControlDefaultConfigId>
+          <ControlDescriptionXML><controlDescriptions /></ControlDescriptionXML>
+          <IntroducedVersion>1.0.0.0</IntroducedVersion>
+        </CustomControlDefaultConfig>
+      </CustomControlDefaultConfigs>
+    </Entity>
+  </Entities>
+  <Roles></Roles>
+  <Workflows>
+    <Workflow WorkflowId="{b1698ac8-08ca-4f79-be67-0e135b1c0426}" Name="serializeconfigurationdata">
+      <XamlFileName>/Workflows/serializeconfigurationdata-B1698AC8-08CA-4F79-BE67-0E135B1C0426.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>3</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>1</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>1</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <CreateStage>40</CreateStage>
+      <RunAs>1</RunAs>
+      <SdkMessageId>{94fddda7-9d1a-e811-9401-00155d00c101}</SdkMessageId>
+      <UniqueName>serializeconfigurationdata</UniqueName>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <PrimaryEntity>none</PrimaryEntity>
+    </Workflow>
+    <Workflow WorkflowId="{61c6d522-7cfa-4d71-af69-b0651f7a0f3e}" Name="deserializeconfigurationdata">
+      <XamlFileName>/Workflows/deserializeconfigurationdata-61C6D522-7CFA-4D71-AF69-B0651F7A0F3E.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>3</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>1</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>1</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <CreateStage>40</CreateStage>
+      <RunAs>1</RunAs>
+      <SdkMessageId>{0645bcfe-9f1a-e811-9401-00155d00c101}</SdkMessageId>
+      <UniqueName>deserializeconfigurationdata</UniqueName>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <PrimaryEntity>none</PrimaryEntity>
+    </Workflow>
+  </Workflows>
+  <FieldSecurityProfiles></FieldSecurityProfiles>
+  <Templates />
+  <EntityMaps />
+  <EntityRelationships>
+    <EntityRelationship Name="lk_ita_configurationdataquery_createdby">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>ita_configurationdataquery</ReferencingEntityName>
+      <ReferencedEntityName>SystemUser</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>CreatedBy</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier of the user who created the record." languagecode="1033" />
+        </Descriptions>
+      </RelationshipDescription>
+    </EntityRelationship>
+    <EntityRelationship Name="lk_ita_configurationdataquery_modifiedby">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>ita_configurationdataquery</ReferencingEntityName>
+      <ReferencedEntityName>SystemUser</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>ModifiedBy</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier of the user who modified the record." languagecode="1033" />
+        </Descriptions>
+      </RelationshipDescription>
+    </EntityRelationship>
+    <EntityRelationship Name="organization_ita_configurationdataquery">
+      <EntityRelationshipType>OneToMany</EntityRelationshipType>
+      <IsCustomizable>1</IsCustomizable>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsHierarchical>0</IsHierarchical>
+      <ReferencingEntityName>ita_configurationdataquery</ReferencingEntityName>
+      <ReferencedEntityName>Organization</ReferencedEntityName>
+      <CascadeAssign>NoCascade</CascadeAssign>
+      <CascadeDelete>NoCascade</CascadeDelete>
+      <CascadeReparent>NoCascade</CascadeReparent>
+      <CascadeShare>NoCascade</CascadeShare>
+      <CascadeUnshare>NoCascade</CascadeUnshare>
+      <ReferencingAttributeName>OrganizationId</ReferencingAttributeName>
+      <RelationshipDescription>
+        <Descriptions>
+          <Description description="Unique identifier for the organization" languagecode="1033" />
+        </Descriptions>
+      </RelationshipDescription>
+    </EntityRelationship>
+  </EntityRelationships>
+  <OrganizationSettings />
+  <optionsets />
+  <WebResources>
+    <WebResource>
+      <WebResourceId>{db30b882-df19-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/info.html</Name>
+      <DisplayName>Configuration Data Information</DisplayName>
+      <WebResourceType>1</WebResourceType>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatainfohtmlDB30B882-DF19-E811-9401-00155D00C101</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{8214fd77-391c-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/scripts/webapi.js</Name>
+      <DisplayName>Web Api</DisplayName>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatascriptswebapijs8214FD77-391C-E811-9401-00155D00C101</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{68bea7b9-391c-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/scripts/jquery.bootgrid.js</Name>
+      <DisplayName>Boot Grid </DisplayName>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatascriptsjquerybootgridjs68BEA7B9-391C-E811-9401-00155D00C101</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{832c16eb-391c-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/content/jquery.bootgrid.min.css</Name>
+      <DisplayName>Boot Grid css</DisplayName>
+      <WebResourceType>2</WebResourceType>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatacontentjquerybootgridmincss832C16EB-391C-E811-9401-00155D00C101</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{6ed40101-3a1c-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/content/gridstyles.css</Name>
+      <DisplayName>Grid Styles css</DisplayName>
+      <WebResourceType>2</WebResourceType>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatacontentgridstylescss6ED40101-3A1C-E811-9401-00155D00C101</FileName>
+    </WebResource>
+  </WebResources>
+  <SolutionPluginAssemblies>
+    <PluginAssembly FullName="ItAintBoring.ConfigurationData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b" CustomizationLevel="1">
+      <IsolationMode>2</IsolationMode>
+      <SourceType>0</SourceType>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <FileName>/PluginAssemblies/ItAintBoringConfigurationData-D8320E8D-AB92-4698-8E89-6B3DF33968FA/ItAintBoringConfigurationData.dll</FileName>
+      <PluginTypes>
+        <PluginType AssemblyQualifiedName="ItAintBoring.ConfigurationData.ConfigurationDataDeserializePlugin, ItAintBoring.ConfigurationData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b" Name="ItAintBoring.ConfigurationData.ConfigurationDataDeserializePlugin">
+          <FriendlyName>5ad221b5-c21c-49ea-9989-05e599607055</FriendlyName>
+        </PluginType>
+        <PluginType AssemblyQualifiedName="ItAintBoring.ConfigurationData.ConfigurationDataSerializePlugin, ItAintBoring.ConfigurationData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b" Name="ItAintBoring.ConfigurationData.ConfigurationDataSerializePlugin">
+          <FriendlyName>d07e400e-a196-4ed7-9ab4-8e5dee7504aa</FriendlyName>
+        </PluginType>
+      </PluginTypes>
+    </PluginAssembly>
+  </SolutionPluginAssemblies>
+  <SdkMessageProcessingSteps>
+    <SdkMessageProcessingStep Name="ItAintBoring.ConfigurationData.ConfigurationDataDeserializePlugin: ita_deserialize of any Entity" SdkMessageProcessingStepId="{d0af72de-da19-e811-9401-00155d00c101}">
+      <PluginTypeName>ItAintBoring.ConfigurationData.ConfigurationDataDeserializePlugin, ItAintBoring.ConfigurationData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b</PluginTypeName>
+      <AsyncAutoDelete>0</AsyncAutoDelete>
+      <Description>ItAintBoring.ConfigurationData.ConfigurationDataDeserializePlugin: ita_deserialize of any Entity</Description>
+      <FilteringAttributes></FilteringAttributes>
+      <InvocationSource>0</InvocationSource>
+      <Mode>0</Mode>
+      <Rank>1</Rank>
+      <SdkMessageId>{0645bcfe-9f1a-e811-9401-00155d00c101}</SdkMessageId>
+      <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+      <Stage>20</Stage>
+      <IsCustomizable>1</IsCustomizable>
+      <IsHidden>0</IsHidden>
+      <SupportedDeployment>0</SupportedDeployment>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <SdkMessageProcessingStepImages />
+    </SdkMessageProcessingStep>
+    <SdkMessageProcessingStep Name="ItAintBoring.ConfigurationData.ConfigurationDataSerializePlugin: ita_serializeconfigurationdata of any Entity" SdkMessageProcessingStepId="{fe731c4b-9e1a-e811-9401-00155d00c101}">
+      <PluginTypeName>ItAintBoring.ConfigurationData.ConfigurationDataSerializePlugin, ItAintBoring.ConfigurationData, Version=1.0.0.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b</PluginTypeName>
+      <AsyncAutoDelete>0</AsyncAutoDelete>
+      <Description>ItAintBoring.ConfigurationData.ConfigurationDataSerializePlugin: ita_serializeconfigurationdata of any Entity</Description>
+      <FilteringAttributes></FilteringAttributes>
+      <InvocationSource>0</InvocationSource>
+      <Mode>0</Mode>
+      <Rank>1</Rank>
+      <SdkMessageId>{94fddda7-9d1a-e811-9401-00155d00c101}</SdkMessageId>
+      <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+      <Stage>20</Stage>
+      <IsCustomizable>1</IsCustomizable>
+      <IsHidden>0</IsHidden>
+      <SupportedDeployment>0</SupportedDeployment>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <SdkMessageProcessingStepImages />
+    </SdkMessageProcessingStep>
+  </SdkMessageProcessingSteps>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>
