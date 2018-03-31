@@ -7,6 +7,8 @@ Sdk.UserInfo = null;
 Sdk.progressDialogControl = null;
 Sdk.webResourceDialogControl = null;
 Sdk.progressBarControl = null;
+Sdk.importAllDialogControl = null;
+Sdk.importAllSettings = null;
 
 Sdk.webAPIPath = "../../../api/data/v8.2";      // Path to the web API.
 
@@ -276,7 +278,7 @@ Sdk.internalDeSerializeAllResources = function () {
         Sdk.allResourcesSerializationData.onSuccess();
     }
     else {
-        Sdk.deSerializeWebResource(Sdk.allResourcesSerializationData.resources[Sdk.allResourcesSerializationData.currentResource].webresourceid, null, Sdk.internalDeSerializeAllResources, Sdk.allResourcesSerializationData.onError);
+        Sdk.deSerializeWebResource(Sdk.allResourcesSerializationData.resources[Sdk.allResourcesSerializationData.currentResource].webresourceid, JSON.stringify(Sdk.importAllSettings), Sdk.internalDeSerializeAllResources, Sdk.allResourcesSerializationData.onError);
         Sdk.allResourcesSerializationData.currentResource++;
     }
 }
@@ -304,7 +306,7 @@ Sdk.deSerializeAllResources = function (onSuccess, onError) {
     Sdk.allResourcesSerializationData.onError = onError;
     Sdk.allResourcesSerializationData.resources = [];
     Sdk.currentData.rows.forEach(function (row) {
-        //if (row.homeorganization != Sdk.UserInfo.OrganizationId)
+        if (row.homeorganization != Sdk.UserInfo.OrganizationId || Sdk.importAllSettings.includeHome)
         {
             Sdk.allResourcesSerializationData.resources.push(row);
         }
@@ -338,6 +340,7 @@ Sdk.deSerializeWebResource = function (resourceId, settings, onSuccess, onError)
     var webresource = {};
     webresource.webresourceid = resourceId;//"00000001-0000-0000-0000-000000000000";
     parameters.WebResource = webresource;
+    parameters.Settings = settings;
 
     var uri = "/ita_deserializeconfigurationdata";
     var result = Sdk.request("POST", uri, parameters, false, 1000) // Adding sample data so we can query against it.
@@ -409,6 +412,52 @@ Sdk.createWebResourceDialog = function(controlName)
     });
 }
 
+Sdk.createImportAllDialog = function (controlName) {
+    Sdk.importAllDialogControl = controlName;
+    $("#" + controlName).dialog({
+        height: 200,
+        width: 600,
+        title: "Import All",
+        modal: true,
+        autoOpen: false,
+        buttons: [
+            {
+                text: "Import",
+
+                click: function () {
+                    $(this).dialog("close");
+                    Sdk.importAllSettings = {};
+                    Sdk.importAllSettings.includeHome = $("#import_includehome").prop('checked');
+                    Sdk.importAllSettings.alwaysUpdate = $("#import_alwaysupdate").prop('checked');
+
+                    Sdk.showProgressBar();
+                    Sdk.publishAll(
+                        function () {
+                            Sdk.deSerializeAllResources(
+                                function () {
+                                    Sdk.publishAll(Sdk.resourceOnSaveSuccess, Sdk.resourceOnSaveError);
+                                },
+                                Sdk.resourceOnSaveError
+                            );
+                        }, Sdk.resourceOnSaveError);
+                }
+            },
+            {
+                text: "Cancel",
+
+                click: function () {
+                    $(this).dialog("close");
+                }
+
+                // Uncommenting the following line would hide the text,
+                // resulting in the label being used as a tooltip
+                //showText: false
+            }
+        ]
+
+    });
+}
+
 Sdk.onError = function (error) {
     alert(error);
 };
@@ -455,13 +504,16 @@ Sdk.openResourceDialog = function () {
     $("#data_description").val(Sdk.currentRow != null ? Sdk.currentRow.description : "");
     $("#data_displayname").val(Sdk.currentRow != null ? Sdk.currentRow.displayname : "");
     $("#data_order").val(Sdk.currentRow != null ? Sdk.currentRow.order : "");
+    $("#data_createonly").prop('checked', Sdk.currentRow != null ? Sdk.currentRow.createonly : false);
+    
     $("#data_fetchxml").val(Sdk.currentRow != null ? Sdk.currentRow.fetchxml : "");
+    $("#data_lookupfield").val(Sdk.currentRow != null ? Sdk.currentRow.lookupfield : "");
 
     $("#data_resourceurl").attr("href", Sdk.currentRow != null ? "../../../main.aspx?_CreateFromType=7100&etc=9333&id=%7b" + Sdk.currentRow.webresourceid + "%7d&pagetype=webresourceedit" : "");
     $("#data_resourceurl").text(Sdk.currentRow != null ? Sdk.currentRow.resourcename : "");
 
 
-    $("#webresourcedialog").dialog('open');
+    $("#" + Sdk.webResourceDialogControl).dialog('open');
 }
 
 Sdk.updateRow = function (dialogRow) {
@@ -469,7 +521,9 @@ Sdk.updateRow = function (dialogRow) {
     dialogRow.description = $("#data_description").val();
     dialogRow.displayname = $("#data_displayname").val();
     dialogRow.order = $("#data_order").val();
+    dialogRow.createonly = $("#data_createonly").prop('checked');
     dialogRow.fetchxml = $("#data_fetchxml").val();
+    dialogRow.lookupfield = $("#data_lookupfield").val();
 }
 
 Sdk.serializeAll = function () {
@@ -482,16 +536,8 @@ Sdk.serializeAll = function () {
 }
 
 Sdk.importAll = function () {
-    Sdk.showProgressBar();
-    Sdk.publishAll(
-        function () {
-            Sdk.deSerializeAllResources(
-                function () {
-                    Sdk.publishAll(Sdk.resourceOnSaveSuccess, Sdk.resourceOnSaveError);
-                },
-                Sdk.resourceOnSaveError
-            );
-        }, Sdk.resourceOnSaveError);
+    $("#" + Sdk.importAllDialogControl).dialog('open');
+    
 
 }
 

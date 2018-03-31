@@ -90,6 +90,22 @@ namespace ItAintBoring.ConfigurationData
             return result;
         }
 
+        public static ImportAllSettings DeSerializeSettings(string data)
+        {
+
+            ImportAllSettings result = null;
+            using (System.IO.MemoryStream ms = new System.IO.MemoryStream())
+            {
+                var lateBoundSerializer = new DataContractJsonSerializer(typeof(ImportAllSettings));
+                System.IO.StreamWriter sw = new System.IO.StreamWriter(ms);
+                sw.Write(data);
+                sw.Flush();
+                ms.Position = 0;
+                result = (ImportAllSettings)lateBoundSerializer.ReadObject(ms);
+            }
+            return result;
+        }
+
         /// <summary>
         /// Decompresses the string.
         /// </summary>

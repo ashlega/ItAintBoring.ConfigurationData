@@ -10,6 +10,16 @@ namespace ItAintBoring.ConfigurationData
 {
 
     [DataContract]
+    public class ImportAllSettings
+    {
+        [DataMember]
+        public bool includeHome { get; set; }
+
+        [DataMember]
+        public bool alwaysUpdate { get; set; }
+    }
+
+    [DataContract]
     public class DataSetResource
     {
         [DataMember]
@@ -23,6 +33,12 @@ namespace ItAintBoring.ConfigurationData
 
         [DataMember]
         public string fetchxml { get; set; }
+
+        [DataMember]
+        public string lookupfield { get; set; }
+
+        [DataMember]
+        public bool createonly { get; set; }
 
         [DataMember]
         public string modifiedon { get; set; }

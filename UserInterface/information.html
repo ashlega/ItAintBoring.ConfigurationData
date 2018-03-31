@@ -48,15 +48,18 @@
         .fieldLabel {
             font-weight: bold;
             margin-top: 5px;
+            width:100%;
         }
 
         .fieldInput {
             width: 100%;
         }
 
-            .fieldInput Input {
-                width: 100%;
-            }
+        .fieldInput Input {
+            width: 100%;
+        }
+
+        
 
         .fieldArea {
             width: 100%;
@@ -70,8 +73,43 @@
 
         .bigFieldArea TextArea {
             width: 100%;
-            height: 150px;
+            height: 100px;
         }
+
+
+
+        .fieldGroup {
+            
+            width: 100%;
+            margin-top: 12px;
+            margin-bottom: 7px;
+            padding-top:3px;
+            padding-bottom:3px;
+            float: left;
+        }
+
+        .darkbg {
+            background-color: #e5e5e5;
+        }
+
+        .fieldGroup .fieldLabel {
+            font-weight: bold;
+            width: 100px;
+            float: left;
+            padding-right: 10px;
+        }
+
+        .fieldGroup .fieldInput {
+            font-weight: bold;
+            width: 100px;
+            float: left;
+            padding-right: 10px;
+        }
+
+            .fieldGroup .fieldInput Input[type=checkbox] {
+                margin-top: 5px;
+                width: 20px;
+            }
 
         #webresourcedialog {
             font-size: 12px;
@@ -89,6 +127,79 @@
         .noborder {
             border: 0px !important;
         }
+
+
+        .checkbox_container {
+            display: block;
+            position: relative;
+            padding-left: 35px;
+            cursor: pointer;
+            font-size: 22px;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+            .checkbox_container input {
+                position: absolute;
+                opacity: 0;
+                cursor: pointer;
+            }
+
+
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 27px;
+            width: 27px;
+            background-color: #fff;
+            border: 1px solid #000000;
+        }
+
+
+        .checkbox_container:hover input ~ .checkmark {
+            background-color: #fff;
+        }
+
+
+        .checkbox_container input:checked ~ .checkmark {
+            /*background-color: #2196F3;*/
+        }
+
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+
+        .checkbox_container input:checked ~ .checkmark:after {
+            display: block;
+        }
+
+
+        .checkbox_container .checkmark:after {
+            left: 9px;
+            top: 6px;
+            width: 7px;
+            height: 11px;
+            border: solid black;
+            border-width: 0 3px 3px 0;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .rightFieldLabel {
+            padding-left: 40px;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            width: 400px;
+        }
+
     </style>
 </head>
 
@@ -97,12 +208,12 @@
     <div class="frameDiv">
         <div class="header">Configuration Data Manager  1.0</div>
 
-        <button class="top-button" onclick="Sdk.SerializeAll();">Prepare All</button>
-        <button class="top-button" onclick="Sdk.ImportAll();">Import All</button>
+        <button class="top-button" onclick="Sdk.serializeAll();">Prepare All</button>
+        <button class="top-button" onclick="Sdk.importAll();">Import All</button>
         <button class="top-button" onclick="Sdk.newResource();">New Data Set</button>
-        <div class="spacer"/>
+        <div class="spacer" />
 
-        <table id="grid-command-buttons" class="table table-condensed table-hover table-striped" >
+        <table id="grid-command-buttons" class="table table-condensed table-hover table-striped">
             <thead>
                 <tr>
                     <th data-column-id="displayname" data-order="asc">Display Name</th>
@@ -116,13 +227,13 @@
         </table>
 
         <br /><br />
-        
-        
+
+
         <div id="progressDialog" style="display:none">
             <div id="progressbar" class="noborder"></div>
         </div>
 
-        <div id="webresourcedialog" style="display:none">
+        <div id="webresourceDialog" style="display:none">
 
             <div class="fieldLabel">
                 Name
@@ -130,23 +241,42 @@
             <div class="fieldInput">
                 <input type="text" id="data_displayname" />
             </div>
+
+            <div class="fieldGroup darkbg">
+                <div class="fieldLabel">
+                    Order
+                </div>
+                <div class="fieldInput">
+                    <input type="text" id="data_order" />
+                </div>
+                <div class="fieldLabel">
+                    Create Only
+                </div>
+                <div class="fieldInput">
+                    <label class="checkbox_container">
+                        <input type="checkbox" checked="checked" id="data_createonly">
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </div>
             <div class="fieldLabel">
                 Description
             </div>
             <div class="fieldArea">
                 <textarea id="data_description"></textarea>
             </div>
-            <div class="fieldLabel">
-                Order
-            </div>
-            <div class="fieldInput">
-                <input type="text" id="data_order" />
-            </div>
+
             <div class="fieldLabel">
                 Fetch XML
             </div>
             <div class="bigFieldArea">
                 <textarea id="data_fetchxml"></textarea>
+            </div>
+            <div class="fieldLabel">
+                Lookup Field (if left empty, will use entity id)
+            </div>
+            <div class="fieldInput">
+                <input type="text" id="data_lookupfield" />
             </div>
             <div class="fieldLabel">
                 Web Resource URL
@@ -156,106 +286,122 @@
             </div>
 
         </div>
-    ﻿
-    <script>
 
-        
-        
-       // var currentRow = null;
-       // var currentData = null;
 
-        function initializeGrid(data) {
-           // currentData = data;
-            
-            function getJson() {
-                
-                return data;
-            }
+        <div id="importallDialog" style="display:none">
+            <div class="leftcheckbox">
+                    <label class="checkbox_container">
+                        <input type="checkbox" id="import_includehome">
+                        <span class="checkmark"></span>
+                    </label>
+            </div>
+            <div class="rightFieldLabel">
+                Include Home Data
+            </div>
 
-            var grid = $("#grid-command-buttons").bootgrid({
+            <div class="leftcheckbox">
+                    <label class="checkbox_container">
+                        <input type="checkbox" id="import_alwaysupdate">
+                        <span class="checkmark"></span>
+                    </label>
+            </div>
+            <div class="rightFieldLabel">
+                Update All (disregard dataset "create only")
+            </div>
 
-                navigation: false,
-                dataFunction: getJson,
-                rowCount: 1000,
-                formatters: {
-                    "home": function (column, row) {
-                        if (row.homeorganization == Sdk.UserInfo.OrganizationId) return "Yes";
-                        else return "No";
-                    },
-                    "applieddate": function (column, row) {
-                        if (typeof row.appliedon == 'undefined' || row.appliedon == null || row.appliedin != Sdk.UserInfo.OrganizationId) return "";
-                            var dt = new Date(row.appliedon);
-                            return dt.toLocaleString("en-US");
-                    },
-                    "modifieddate": function (column, row) {
-                        if (typeof row.modifiedon == 'undefined' || row.modifiedon == null) return "";
-                        var dt = new Date(row.modifiedon);
-                        return dt.toLocaleString("en-US");
-                    },
-                    "commands": function (column, row) {
-                        var buttons = "";
-                        buttons += "<button title=\"Load Data\" type=\"button\" class=\"btn btn-xs btn-default command-apply\" data-row-webresourceid=\"" + row.webresourceid + "\"><span class=\"fa fa-load-o\"></span></button>";
-                        if (row.homeorganization == Sdk.UserInfo.OrganizationId) {
-                            buttons += "<button title=\"Prepare Data\" type=\"button\" class=\"btn btn-xs btn-default command-prepare\" data-row-webresourceid=\"" + row.webresourceid + "\"><span class=\"fa fa-save-o\"></span></button> " +
-                                "<button title=\"Edit Data Set\" type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-webresourceid=\"" + row.webresourceid + "\"><span class=\"fa fa-pencil\"></span></button > ";
-                                
-                        }
-                        buttons += "<button title=\"Delete Data Set\" type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-webresourceid=\"" + row.webresourceid + "\"><span class=\"fa fa-trash-o\"></span></button> ";
-                        
-                        return buttons;
+            </div>
+            ﻿
+            <script>
+
+
+
+                // var currentRow = null;
+                // var currentData = null;
+
+                function initializeGrid(data) {
+                    // currentData = data;
+
+                    function getJson() {
+
+                        return data;
                     }
-                }
-            }).on("loaded.rs.jquery.bootgrid", function () {
 
-                /* Executes after data is loaded and rendered */
-                grid.find(".command-edit").on("click", function (e) {
-                    Sdk.updateResource($(this).data("row-webresourceid"));
-                    //alert("You pressed edit on row: " + $(this).data("row-id"));
-                }).end().find(".command-delete").on("click", function (e) {
-                    if (Sdk.confirm("Delete this data set?")) {
-                        Sdk.showProgressBar();
-                        Sdk.deleteWebResource($(this).data("row-webresourceid"), Sdk.resourceOnSaveSuccess, Sdk.resourceOnSaveError);
-                    }
-                    }).end().find(".command-apply").on("click", function (e) {
-                        Sdk.showProgressBar();
-                        var webResourceId = $(this).data("row-webresourceid");
-                        Sdk.publishAll(
-                            function () {
-                                Sdk.deSerializeWebResource(webResourceId, null,
-                                    function () {
-                                        Sdk.publishAll(Sdk.resourceOnSaveSuccess, Sdk.resourceOnSaveError);
-                                    },
-                                    Sdk.resourceOnSaveError
-                                );
-                            }, Sdk.resourceOnSaveError);
-                        
-                    }).end().find(".command-prepare").on("click", function (e) {
-                        Sdk.showProgressBar();
-                        var webResourceId = $(this).data("row-webresourceid");
-                        Sdk.serializeWebResource(webResourceId, null, 
-                            function () {
-                                Sdk.publishAll(Sdk.resourceOnSaveSuccess, Sdk.resourceOnSaveError);
+                    var grid = $("#grid-command-buttons").bootgrid({
+
+                        navigation: false,
+                        dataFunction: getJson,
+                        rowCount: 1000,
+                        formatters: {
+                            "home": function (column, row) {
+                                if (row.homeorganization == Sdk.UserInfo.OrganizationId) return "Yes";
+                                else return "No";
                             },
-                            Sdk.resourceOnSaveError);
-                });
+                            "applieddate": function (column, row) {
+                                if (typeof row.appliedon == 'undefined' || row.appliedon == null || row.appliedin != Sdk.UserInfo.OrganizationId) return "";
+                                var dt = new Date(row.appliedon);
+                                return dt.toLocaleString("en-US");
+                            },
+                            "modifieddate": function (column, row) {
+                                if (typeof row.modifiedon == 'undefined' || row.modifiedon == null) return "";
+                                var dt = new Date(row.modifiedon);
+                                return dt.toLocaleString("en-US");
+                            },
+                            "commands": function (column, row) {
+                                var buttons = "";
+                                buttons += "<button title=\"Load Data\" type=\"button\" class=\"btn btn-xs btn-default command-apply\" data-row-webresourceid=\"" + row.webresourceid + "\"><span class=\"fa fa-load-o\"></span></button>";
+                                if (row.homeorganization == Sdk.UserInfo.OrganizationId) {
+                                    buttons += "<button title=\"Prepare Data\" type=\"button\" class=\"btn btn-xs btn-default command-prepare\" data-row-webresourceid=\"" + row.webresourceid + "\"><span class=\"fa fa-save-o\"></span></button> " +
+                                        "<button title=\"Edit Data Set\" type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-webresourceid=\"" + row.webresourceid + "\"><span class=\"fa fa-pencil\"></span></button > ";
 
-            });
-        }
+                                }
+                                buttons += "<button title=\"Delete Data Set\" type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-webresourceid=\"" + row.webresourceid + "\"><span class=\"fa fa-trash-o\"></span></button> ";
 
-        var Sdk = window.Sdk || {};
+                                return buttons;
+                            }
+                        }
+                    }).on("loaded.rs.jquery.bootgrid", function () {
 
+                        /* Executes after data is loaded and rendered */
+                        grid.find(".command-edit").on("click", function (e) {
+                            Sdk.updateResource($(this).data("row-webresourceid"));
+                            //alert("You pressed edit on row: " + $(this).data("row-id"));
+                        }).end().find(".command-delete").on("click", function (e) {
+                            if (Sdk.confirm("Delete this data set?")) {
+                                Sdk.showProgressBar();
+                                Sdk.deleteWebResource($(this).data("row-webresourceid"), Sdk.resourceOnSaveSuccess, Sdk.resourceOnSaveError);
+                            }
+                        }).end().find(".command-apply").on("click", function (e) {
+                            Sdk.showProgressBar();
+                            var webResourceId = $(this).data("row-webresourceid");
+                            Sdk.publishAll(
+                                function () {
+                                    Sdk.deSerializeWebResource(webResourceId, null,
+                                        function () {
+                                            Sdk.publishAll(Sdk.resourceOnSaveSuccess, Sdk.resourceOnSaveError);
+                                        },
+                                        Sdk.resourceOnSaveError
+                                    );
+                                }, Sdk.resourceOnSaveError);
 
-        Sdk.createProgressDialog("progressDialog", "progressbar");
-        Sdk.createWebResourceDialog("webresourcedialog");
-        Sdk.getWebResources(initializeGrid);
+                        }).end().find(".command-prepare").on("click", function (e) {
+                            Sdk.showProgressBar();
+                            var webResourceId = $(this).data("row-webresourceid");
+                            Sdk.serializeWebResource(webResourceId, null,
+                                function () {
+                                    Sdk.publishAll(Sdk.resourceOnSaveSuccess, Sdk.resourceOnSaveError);
+                                },
+                                Sdk.resourceOnSaveError);
+                        });
 
+                    });
+                }
 
-        
+                var Sdk = window.Sdk || {};
 
-        
-
-
-    </script>
-
+                Sdk.createImportAllDialog("importallDialog");
+                Sdk.createProgressDialog("progressDialog", "progressbar");
+                Sdk.createWebResourceDialog("webresourceDialog");
+                Sdk.getWebResources(initializeGrid);
+            </script>
 </body>
 </html>
