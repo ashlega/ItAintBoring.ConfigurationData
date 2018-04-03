@@ -338,13 +338,13 @@
                             },
                             "applieddate": function (column, row) {
                                 if (typeof row.appliedon == 'undefined' || row.appliedon == null || row.appliedin != Sdk.UserInfo.OrganizationId) return "";
-                                var dt = new Date(row.appliedon);
-                                return dt.toLocaleString("en-US");
+                                //var dt = new Date(row.appliedon);
+                                return row.appliedon;//dt.toLocaleString("en-US");
                             },
                             "modifieddate": function (column, row) {
                                 if (typeof row.modifiedon == 'undefined' || row.modifiedon == null) return "";
-                                var dt = new Date(row.modifiedon);
-                                return dt.toLocaleString("en-US");
+                                //var dt = new Date(row.modifiedon);
+                                return row.modifiedon;//dt.toLocaleString("en-US");
                             },
                             "commands": function (column, row) {
                                 var buttons = "";
