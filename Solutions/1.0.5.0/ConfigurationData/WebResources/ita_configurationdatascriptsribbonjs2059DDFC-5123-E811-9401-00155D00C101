@@ -1,0 +1,4 @@
+function openConfigurationDataManager()
+{
+   window.open("WebResources/ita_/configurationdata/info.html", "_blank");  
+}

@@ -481,7 +481,7 @@ Sdk.resourceOnSaveSuccess = function () {
     location.reload();
 }
 
-Sdk.resourceOnCreateSuccess = function () {
+Sdk.ResourceOnCreateSuccess = function () {
     location.reload();
 }
 

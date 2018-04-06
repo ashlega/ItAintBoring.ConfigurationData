@@ -1,0 +1,329 @@
+<ImportExportXml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Entities></Entities>
+  <Roles></Roles>
+  <Workflows>
+    <Workflow WorkflowId="{b1698ac8-08ca-4f79-be67-0e135b1c0426}" Name="serializeconfigurationdata">
+      <XamlFileName>/Workflows/serializeconfigurationdata-B1698AC8-08CA-4F79-BE67-0E135B1C0426.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>3</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>1</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>1</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <CreateStage>40</CreateStage>
+      <RunAs>1</RunAs>
+      <SdkMessageId>{94fddda7-9d1a-e811-9401-00155d00c101}</SdkMessageId>
+      <UniqueName>serializeconfigurationdata</UniqueName>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <PrimaryEntity>none</PrimaryEntity>
+    </Workflow>
+    <Workflow WorkflowId="{03a4e83d-1504-46ed-b643-8b95a1a901d4}" Name="updatewebresource">
+      <XamlFileName>/Workflows/updatewebresource-03A4E83D-1504-46ED-B643-8B95A1A901D4.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>3</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>1</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>1</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <CreateStage>40</CreateStage>
+      <RunAs>1</RunAs>
+      <SdkMessageId>{afa61a0a-9721-e811-9401-00155d00c101}</SdkMessageId>
+      <UniqueName>updatewebresource</UniqueName>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <PrimaryEntity>none</PrimaryEntity>
+    </Workflow>
+    <Workflow WorkflowId="{61c6d522-7cfa-4d71-af69-b0651f7a0f3e}" Name="deserializeconfigurationdata">
+      <XamlFileName>/Workflows/deserializeconfigurationdata-61C6D522-7CFA-4D71-AF69-B0651F7A0F3E.xaml</XamlFileName>
+      <Type>1</Type>
+      <Subprocess>0</Subprocess>
+      <Category>3</Category>
+      <Mode>0</Mode>
+      <Scope>4</Scope>
+      <OnDemand>1</OnDemand>
+      <TriggerOnCreate>0</TriggerOnCreate>
+      <TriggerOnDelete>0</TriggerOnDelete>
+      <AsyncAutodelete>0</AsyncAutodelete>
+      <SyncWorkflowLogOnFailure>1</SyncWorkflowLogOnFailure>
+      <StateCode>1</StateCode>
+      <StatusCode>2</StatusCode>
+      <CreateStage>40</CreateStage>
+      <RunAs>1</RunAs>
+      <SdkMessageId>{0645bcfe-9f1a-e811-9401-00155d00c101}</SdkMessageId>
+      <UniqueName>deserializeconfigurationdata</UniqueName>
+      <IsTransacted>1</IsTransacted>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsCustomizable>1</IsCustomizable>
+      <PrimaryEntity>none</PrimaryEntity>
+    </Workflow>
+  </Workflows>
+  <FieldSecurityProfiles></FieldSecurityProfiles>
+  <Templates />
+  <RibbonDiffXml>
+    <CustomActions>
+      <CustomAction Id="ita.ApplicationRibbon.ConfigurationDataManager.Button.CustomAction" Location="Mscrm.BasicHomeTab.Tools.Controls._children" Sequence="9">
+        <CommandUIDefinition>
+          <Button Alt="$LocLabels:ita.ApplicationRibbon.ConfigurationDataManager.Button.Alt" Command="ita.ApplicationRibbon.ConfigurationDataManager.Command" Id="ita.ApplicationRibbon.ConfigurationDataManager.Button" LabelText="$LocLabels:ita.ApplicationRibbon.ConfigurationDataManager.Button.LabelText" Sequence="9" TemplateAlias="o1" ToolTipTitle="$LocLabels:ita.ApplicationRibbon.ConfigurationDataManager.Button.ToolTipTitle" ToolTipDescription="$LocLabels:ita.ApplicationRibbon.ConfigurationDataManager.Button.ToolTipDescription" />
+        </CommandUIDefinition>
+      </CustomAction>
+    </CustomActions>
+    <Templates>
+      <RibbonTemplates Id="Mscrm.Templates"></RibbonTemplates>
+    </Templates>
+    <CommandDefinitions>
+      <CommandDefinition Id="ita.ApplicationRibbon.ConfigurationDataManager.Command">
+        <EnableRules />
+        <DisplayRules />
+        <Actions>
+          <JavaScriptFunction FunctionName="openConfigurationDataManager" Library="$webresource:ita_/configurationdata/scripts/ribbon.js" />
+        </Actions>
+      </CommandDefinition>
+    </CommandDefinitions>
+    <RuleDefinitions>
+      <TabDisplayRules />
+      <DisplayRules />
+      <EnableRules />
+    </RuleDefinitions>
+    <LocLabels>
+      <LocLabel Id="ita.ApplicationRibbon.ConfigurationDataManager.Button.Alt">
+        <Titles>
+          <Title description="Configuration Data Manager" languagecode="1033" />
+        </Titles>
+      </LocLabel>
+      <LocLabel Id="ita.ApplicationRibbon.ConfigurationDataManager.Button.LabelText">
+        <Titles>
+          <Title description="Configuration Data " languagecode="1033" />
+        </Titles>
+      </LocLabel>
+      <LocLabel Id="ita.ApplicationRibbon.ConfigurationDataManager.Button.ToolTipDescription">
+        <Titles>
+          <Title description="Configuration Data Manager" languagecode="1033" />
+        </Titles>
+      </LocLabel>
+      <LocLabel Id="ita.ApplicationRibbon.ConfigurationDataManager.Button.ToolTipTitle">
+        <Titles>
+          <Title description="Configuration Data Manager" languagecode="1033" />
+        </Titles>
+      </LocLabel>
+    </LocLabels>
+  </RibbonDiffXml>
+  <EntityMaps />
+  <EntityRelationships />
+  <OrganizationSettings />
+  <optionsets />
+  <WebResources>
+    <WebResource>
+      <WebResourceId>{db30b882-df19-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/info.html</Name>
+      <DisplayName>Configuration Data Information</DisplayName>
+      <WebResourceType>1</WebResourceType>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatainfohtmlDB30B882-DF19-E811-9401-00155D00C101</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{8214fd77-391c-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/scripts/webapi.js</Name>
+      <DisplayName>Web Api</DisplayName>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatascriptswebapijs8214FD77-391C-E811-9401-00155D00C101</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{68bea7b9-391c-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/scripts/jquery.bootgrid.js</Name>
+      <DisplayName>Boot Grid </DisplayName>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatascriptsjquerybootgridjs68BEA7B9-391C-E811-9401-00155D00C101</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{832c16eb-391c-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/content/jquery.bootgrid.min.css</Name>
+      <DisplayName>Boot Grid css</DisplayName>
+      <WebResourceType>2</WebResourceType>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatacontentjquerybootgridmincss832C16EB-391C-E811-9401-00155D00C101</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{6ed40101-3a1c-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/content/gridstyles.css</Name>
+      <DisplayName>Grid Styles css</DisplayName>
+      <WebResourceType>2</WebResourceType>
+      <IntroducedVersion>1.0.0.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatacontentgridstylescss6ED40101-3A1C-E811-9401-00155D00C101</FileName>
+    </WebResource>
+    <WebResource>
+      <WebResourceId>{2059ddfc-5123-e811-9401-00155d00c101}</WebResourceId>
+      <Name>ita_/configurationdata/scripts/ribbon.js</Name>
+      <DisplayName>Configuration Data Ribbon</DisplayName>
+      <WebResourceType>3</WebResourceType>
+      <IntroducedVersion>1.0.2.0</IntroducedVersion>
+      <IsEnabledForMobileClient>0</IsEnabledForMobileClient>
+      <IsAvailableForMobileOffline>0</IsAvailableForMobileOffline>
+      <DependencyXml>&lt;Dependencies&gt;&lt;Dependency componentType="WebResource"/&gt;&lt;/Dependencies&gt;</DependencyXml>
+      <IsCustomizable>1</IsCustomizable>
+      <CanBeDeleted>1</CanBeDeleted>
+      <IsHidden>0</IsHidden>
+      <FileName>/WebResources/ita_configurationdatascriptsribbonjs2059DDFC-5123-E811-9401-00155D00C101</FileName>
+    </WebResource>
+  </WebResources>
+  <SolutionPluginAssemblies>
+    <PluginAssembly FullName="ItAintBoring.ConfigurationData, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b" CustomizationLevel="1">
+      <IsolationMode>2</IsolationMode>
+      <SourceType>0</SourceType>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <FileName>/PluginAssemblies/ItAintBoringConfigurationData-D8320E8D-AB92-4698-8E89-6B3DF33968FA/ItAintBoringConfigurationData.dll</FileName>
+      <PluginTypes>
+        <PluginType AssemblyQualifiedName="ItAintBoring.ConfigurationData.ConfigurationDataDeserializePlugin, ItAintBoring.ConfigurationData, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b" Name="ItAintBoring.ConfigurationData.ConfigurationDataDeserializePlugin">
+          <FriendlyName>6bd44658-4d69-446b-b946-3b5ef10feb5b</FriendlyName>
+        </PluginType>
+        <PluginType AssemblyQualifiedName="ItAintBoring.ConfigurationData.ConfigurationDataSerializePlugin, ItAintBoring.ConfigurationData, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b" Name="ItAintBoring.ConfigurationData.ConfigurationDataSerializePlugin">
+          <FriendlyName>97987c2b-f1dd-41e0-b4fe-9826e73a0064</FriendlyName>
+        </PluginType>
+        <PluginType AssemblyQualifiedName="ItAintBoring.ConfigurationData.UpdateWebResourcePlugin, ItAintBoring.ConfigurationData, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b" Name="ItAintBoring.ConfigurationData.UpdateWebResourcePlugin">
+          <FriendlyName>5802596d-bef2-46ae-9f39-2d145057dccc</FriendlyName>
+        </PluginType>
+        <PluginType AssemblyQualifiedName="ItAintBoring.ConfigurationData.WebResourcePlugin, ItAintBoring.ConfigurationData, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b" Name="ItAintBoring.ConfigurationData.WebResourcePlugin">
+          <FriendlyName>a3d98dd7-9a67-4182-8e61-eb1b4d403eae</FriendlyName>
+        </PluginType>
+      </PluginTypes>
+    </PluginAssembly>
+  </SolutionPluginAssemblies>
+  <SdkMessageProcessingSteps>
+    <SdkMessageProcessingStep Name="ItAintBoring.ConfigurationData.ConfigurationDataDeserializePlugin: ita_deserializeconfigurationdata of any Entity" SdkMessageProcessingStepId="{505b3308-db20-e811-9401-00155d00c101}">
+      <PluginTypeName>ItAintBoring.ConfigurationData.ConfigurationDataDeserializePlugin, ItAintBoring.ConfigurationData, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b</PluginTypeName>
+      <AsyncAutoDelete>0</AsyncAutoDelete>
+      <Description>ItAintBoring.ConfigurationData.ConfigurationDataDeserializePlugin: ita_deserializeconfigurationdata of any Entity</Description>
+      <FilteringAttributes></FilteringAttributes>
+      <InvocationSource>0</InvocationSource>
+      <Mode>0</Mode>
+      <Rank>1</Rank>
+      <SdkMessageId>{0645bcfe-9f1a-e811-9401-00155d00c101}</SdkMessageId>
+      <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+      <Stage>20</Stage>
+      <IsCustomizable>1</IsCustomizable>
+      <IsHidden>0</IsHidden>
+      <SupportedDeployment>0</SupportedDeployment>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <SdkMessageProcessingStepImages />
+    </SdkMessageProcessingStep>
+    <SdkMessageProcessingStep Name="ItAintBoring.ConfigurationData.ConfigurationDataSerializePlugin: ita_serializeconfigurationdata of any Entity" SdkMessageProcessingStepId="{11f90201-db20-e811-9401-00155d00c101}">
+      <PluginTypeName>ItAintBoring.ConfigurationData.ConfigurationDataSerializePlugin, ItAintBoring.ConfigurationData, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b</PluginTypeName>
+      <AsyncAutoDelete>0</AsyncAutoDelete>
+      <Description>ItAintBoring.ConfigurationData.ConfigurationDataSerializePlugin: ita_serializeconfigurationdata of any Entity</Description>
+      <FilteringAttributes></FilteringAttributes>
+      <InvocationSource>0</InvocationSource>
+      <Mode>0</Mode>
+      <Rank>1</Rank>
+      <SdkMessageId>{94fddda7-9d1a-e811-9401-00155d00c101}</SdkMessageId>
+      <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+      <Stage>20</Stage>
+      <IsCustomizable>1</IsCustomizable>
+      <IsHidden>0</IsHidden>
+      <SupportedDeployment>0</SupportedDeployment>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <SdkMessageProcessingStepImages />
+    </SdkMessageProcessingStep>
+    <SdkMessageProcessingStep Name="ItAintBoring.ConfigurationData.UpdateWebResourcePlugin: ita_updatewebresource of any Entity" SdkMessageProcessingStepId="{191789a8-9721-e811-9401-00155d00c101}">
+      <PluginTypeName>ItAintBoring.ConfigurationData.UpdateWebResourcePlugin, ItAintBoring.ConfigurationData, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b</PluginTypeName>
+      <AsyncAutoDelete>0</AsyncAutoDelete>
+      <Description>ItAintBoring.ConfigurationData.UpdateWebResourcePlugin: ita_updatewebresource of any Entity</Description>
+      <FilteringAttributes></FilteringAttributes>
+      <InvocationSource>0</InvocationSource>
+      <Mode>0</Mode>
+      <Rank>1</Rank>
+      <SdkMessageId>{afa61a0a-9721-e811-9401-00155d00c101}</SdkMessageId>
+      <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+      <Stage>20</Stage>
+      <IsCustomizable>1</IsCustomizable>
+      <IsHidden>0</IsHidden>
+      <SupportedDeployment>0</SupportedDeployment>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <SdkMessageProcessingStepImages />
+    </SdkMessageProcessingStep>
+    <SdkMessageProcessingStep Name="ItAintBoring.ConfigurationData.WebResourcePlugin: Retrieve of webresource" SdkMessageProcessingStepId="{dcfe57a9-9a21-e811-9401-00155d00c101}">
+      <PluginTypeName>ItAintBoring.ConfigurationData.WebResourcePlugin, ItAintBoring.ConfigurationData, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b</PluginTypeName>
+      <PrimaryEntity>webresource</PrimaryEntity>
+      <AsyncAutoDelete>0</AsyncAutoDelete>
+      <Description>ItAintBoring.ConfigurationData.WebResourcePlugin: Retrieve of webresource</Description>
+      <FilteringAttributes></FilteringAttributes>
+      <InvocationSource>0</InvocationSource>
+      <Mode>0</Mode>
+      <Rank>1</Rank>
+      <SdkMessageId>{f2bdbb1b-ea3e-db11-86a7-000a3a5473e8}</SdkMessageId>
+      <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+      <Stage>40</Stage>
+      <IsCustomizable>1</IsCustomizable>
+      <IsHidden>0</IsHidden>
+      <SupportedDeployment>0</SupportedDeployment>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <SdkMessageProcessingStepImages />
+    </SdkMessageProcessingStep>
+    <SdkMessageProcessingStep Name="ItAintBoring.ConfigurationData.WebResourcePlugin: RetrieveMultiple of webresource" SdkMessageProcessingStepId="{206156dc-9b21-e811-9401-00155d00c101}">
+      <PluginTypeName>ItAintBoring.ConfigurationData.WebResourcePlugin, ItAintBoring.ConfigurationData, Version=1.0.1.0, Culture=neutral, PublicKeyToken=c55535df5db3d99b</PluginTypeName>
+      <PrimaryEntity>webresource</PrimaryEntity>
+      <AsyncAutoDelete>0</AsyncAutoDelete>
+      <Description>ItAintBoring.ConfigurationData.WebResourcePlugin: RetrieveMultiple of webresource</Description>
+      <FilteringAttributes></FilteringAttributes>
+      <InvocationSource>0</InvocationSource>
+      <Mode>0</Mode>
+      <Rank>1</Rank>
+      <SdkMessageId>{03bebb1b-ea3e-db11-86a7-000a3a5473e8}</SdkMessageId>
+      <EventHandlerTypeCode>4602</EventHandlerTypeCode>
+      <Stage>40</Stage>
+      <IsCustomizable>1</IsCustomizable>
+      <IsHidden>0</IsHidden>
+      <SupportedDeployment>0</SupportedDeployment>
+      <IntroducedVersion>1.0</IntroducedVersion>
+      <SdkMessageProcessingStepImages />
+    </SdkMessageProcessingStep>
+  </SdkMessageProcessingSteps>
+  <Languages>
+    <Language>1033</Language>
+  </Languages>
+</ImportExportXml>
