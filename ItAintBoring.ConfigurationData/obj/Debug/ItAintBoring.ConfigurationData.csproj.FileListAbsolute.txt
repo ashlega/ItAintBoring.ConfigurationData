@@ -20,3 +20,4 @@ C:\Work\Projects\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\o
 C:\Work\Projects\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\obj\Debug\ItAintBoring.ConfigurationData.csproj.CoreCompileInputs.cache
 C:\Work\Projects\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\obj\Debug\ItAintBoring.ConfigurationData.dll
 C:\Work\Projects\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\obj\Debug\ItAintBoring.ConfigurationData.pdb
+C:\Work\Projects\ItAintBoring.ConfigurationData\ItAintBoring.ConfigurationData\obj\Debug\ItAintBoring.ConfigurationData.csproj.CopyComplete

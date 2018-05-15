@@ -118,8 +118,12 @@ namespace ItAintBoring.ConfigurationData
                                                     qe.Criteria.AddCondition(new ConditionExpression(r.Entity1IntersectAttribute, ConditionOperator.Equal, (Guid)e[r.Entity1IntersectAttribute]));
                                                     qe.Criteria.AddCondition(new ConditionExpression(r.Entity2IntersectAttribute, ConditionOperator.Equal, (Guid)e[r.Entity2IntersectAttribute]));
                                                     bool exists = service.RetrieveMultiple(qe).Entities.FirstOrDefault() != null;
-                                                    if (!exists)
+                                                    if (!exists
+                                                        && Common.RecordExists(service, r.Entity1LogicalName, r.Entity1IntersectAttribute, (Guid)e[r.Entity1IntersectAttribute])
+                                                        && Common.RecordExists(service, r.Entity2LogicalName, r.Entity2IntersectAttribute, (Guid)e[r.Entity2IntersectAttribute])
+                                                        )
                                                     {
+
                                                         Relationship rs = new Relationship(r.SchemaName);
                                                         EntityReferenceCollection collection = new EntityReferenceCollection();
 

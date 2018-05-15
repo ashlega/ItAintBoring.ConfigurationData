@@ -8,6 +8,7 @@ using System.Runtime.Serialization.Json;
 using System.Runtime.Serialization;
 using System.IO;
 using System.IO.Compression;
+using Microsoft.Xrm.Sdk.Query;
 
 namespace ItAintBoring.ConfigurationData
 {
@@ -277,6 +278,13 @@ namespace ItAintBoring.ConfigurationData
         public static string CurrentTime()
         {
             return DateTime.UtcNow.ToString();
+        }
+
+        public static bool RecordExists(IOrganizationService service, string entityName, string attributeName, Guid entityId)
+        {
+            QueryExpression qe = new QueryExpression(entityName);
+            qe.Criteria.AddCondition(new ConditionExpression(attributeName, ConditionOperator.Equal, entityId));
+            return service.RetrieveMultiple(qe).Entities.FirstOrDefault() != null;
         }
     }
 
