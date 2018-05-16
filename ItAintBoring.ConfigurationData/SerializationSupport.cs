@@ -154,7 +154,7 @@ namespace ItAintBoring.ConfigurationData
             }
             else if (TypeName.Contains("int"))
             {
-                attributeValue = int.Parse((string)Value);
+                attributeValue = long.Parse((string)Value);
             }
             else if (TypeName.Contains("double"))
             {
